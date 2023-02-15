@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import uniqid from 'uniqid';
 import GeneralInfo from './GeneralInfo';
 import Experience from './Experience';
 import Education from './Education';
