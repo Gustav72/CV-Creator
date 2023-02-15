@@ -2,19 +2,26 @@ import React, { Component } from 'react';
 import uniqid from 'uniqid';
 import GeneralInfo from './GeneralInfo';
 import Experience from './Experience';
-import Education from './Education'
+import Education from './Education';
 
 class App extends Component {
+
+  handleSubmit = event => {
+    event.preventDefault();
+  }
+
 
   render() { 
 
     return (
       <div>
-        <h1>CV Creator</h1>
-        <GeneralInfo />
-        <Experience />
-        <Education />
-        <button>Print to PDF</button>
+        <h1>React CV Creator</h1>
+        <form onSubmit = {this.handleSubmit}>
+          <GeneralInfo />
+          <Experience />
+          <Education />
+          <button type='submit'>Print to PDF</button>
+        </form>
       </div>
     );
   }
