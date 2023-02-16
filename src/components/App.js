@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import GeneralInfo from './GeneralInfo';
 import Experience from './Experience';
 import Education from './Education';
