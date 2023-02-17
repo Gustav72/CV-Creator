@@ -36,24 +36,27 @@ export default class Education extends Component {
 
     render() {
         return (
-            <div>
+            <div className="education">
                 <h3>Education</h3>
                 <div>
-
-                    <label>Institution:</label>
-                    <input type="text" value={this.state.institution} onChange={this.handleInstitutionChange}></input>
+                    <div>
+                        <label>Institution:</label>
+                        <input type="text" value={this.state.institution} onChange={this.handleInstitutionChange}></input>
+                    </div>
+                    <div>
+                        <label>Field of Focus:</label>
+                        <input type="text" value={this.state.fieldOfFocus} onChange={this.handleFieldOfFocusChange}></input>
+                    </div>
                 </div>
                 <div>
-                    <label>Field of Focus:</label>
-                    <input type="text" value={this.state.fieldOfFocus} onChange={this.handleFieldOfFocusChange}></input>
-                </div>
-                <div>
-                    <label>From:</label>
-                    <input type="date" value={this.state.dateFrom} onChange={this.handleDateFromChange}></input>
-                </div>
-                <div>
-                    <label>From:</label>
-                    <input type="date" value={this.state.dateTo} onChange={this.handleDateToChange}></input>
+                    <div>
+                        <label>From:</label>
+                        <input type="date" value={this.state.dateFrom} onChange={this.handleDateFromChange}></input>
+                    </div>
+                    <div>
+                        <label>To:</label>
+                        <input type="date" value={this.state.dateTo} onChange={this.handleDateToChange}></input>
+                    </div>
                 </div>
             </div>
         )

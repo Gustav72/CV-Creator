@@ -1,0 +1,63 @@
+body {
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+h3 {
+    text-decoration: underline;
+    width: 500px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#container > form {
+    border: 5px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    
+}
+
+#container > form > div > div {
+    display: flex;
+    flex-direction: row;
+}
+
+#container > form > div > div > div {
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+}
+
+label {
+    margin-right: 20px;
+}
+
+input {
+    width: 200px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+
+}
+
+textarea {
+    height: 100px;
+    width: 440px;
+}
+
+button {
+    padding-left: auto;
+    padding-right: auto;
+    width: 100px;
+    height: 30px;
+
+}

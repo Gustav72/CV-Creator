@@ -10,17 +10,19 @@ class App extends Component {
     event.preventDefault();
   }
 
-
   render() { 
 
     return (
-      <div>
+      <div id='container'>
         <h1>React CV Creator</h1>
         <form onSubmit = {this.handleSubmit}>
           <GeneralInfo />
+          <button id="add-general-info">Add Section</button>
           <Experience />
+          <button id="add-experience">Add Section</button>
           <Education />
-          <button type='submit'>Print to PDF</button>
+          <button id="add-education">Add Section</button>
+          <button type='submit' id="button">Print to PDF</button>
         </form>
       </div>
     );
