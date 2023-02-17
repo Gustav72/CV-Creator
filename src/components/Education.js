@@ -51,11 +51,11 @@ export default class Education extends Component {
                 <div>
                     <div>
                         <label>From:</label>
-                        <input type="date" value={this.state.dateFrom} onChange={this.handleDateFromChange}></input>
+                        <input className="date" type="date" value={this.state.dateFrom} onChange={this.handleDateFromChange}></input>
                     </div>
                     <div>
                         <label>To:</label>
-                        <input type="date" value={this.state.dateTo} onChange={this.handleDateToChange}></input>
+                        <input className="date" type="date" value={this.state.dateTo} onChange={this.handleDateToChange}></input>
                     </div>
                 </div>
             </div>
