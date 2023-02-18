@@ -1,8 +1,12 @@
 body {
-    background-color: rgb(2, 222, 2);
+    background-color: rgb(4, 76, 98);
     display: flex;
     justify-content: center;
     font-size: 1.25rem;
+}
+
+h1 {
+    color: rgb(233, 233, 233);
 }
 
 h3 {
@@ -72,6 +76,6 @@ button {
 }
 
 #button {
-    margin-top: 10px;
+    margin-top: 15px;
     background-color: orange;
 }
