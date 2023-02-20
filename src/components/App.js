@@ -6,16 +6,12 @@ import Education from './Education';
 
 class App extends Component {
 
-  handleSubmit = event => {
-    event.preventDefault();
-  }
 
   render() { 
 
     return (
       <div id='container'>
         <h1>React CV Creator</h1>
-        <form onSubmit = {this.handleSubmit}>
           <GeneralInfo />
           <button id="add-general-info">Save</button>
           <Experience />
@@ -23,7 +19,6 @@ class App extends Component {
           <Education />
           <button id="add-education">Save</button>
           <button type='submit' id="button">Print to PDF</button>
-        </form>
       </div>
     );
   }
