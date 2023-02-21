@@ -38,26 +38,29 @@ export default class Education extends Component {
         return (
             <div className="education">
                 <h3>Education</h3>
-                <div>
+                <form>
                     <div>
-                        <label>Institution:</label>
-                        <input type="text" value={this.state.institution} onChange={this.handleInstitutionChange}></input>
+                        <div>
+                            <label>Institution:</label>
+                            <input type="text" value={this.state.institution} onChange={this.handleInstitutionChange}></input>
+                        </div>
+                        <div>
+                            <label>Field of Focus:</label>
+                            <input type="text" value={this.state.fieldOfFocus} onChange={this.handleFieldOfFocusChange}></input>
+                        </div>
                     </div>
                     <div>
-                        <label>Field of Focus:</label>
-                        <input type="text" value={this.state.fieldOfFocus} onChange={this.handleFieldOfFocusChange}></input>
+                        <div>
+                            <label>From:</label>
+                            <input className="date" type="date" value={this.state.dateFrom} onChange={this.handleDateFromChange}></input>
+                        </div>
+                        <div>
+                            <label>To:</label>
+                            <input className="date" type="date" value={this.state.dateTo} onChange={this.handleDateToChange}></input>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <div>
-                        <label>From:</label>
-                        <input className="date" type="date" value={this.state.dateFrom} onChange={this.handleDateFromChange}></input>
-                    </div>
-                    <div>
-                        <label>To:</label>
-                        <input className="date" type="date" value={this.state.dateTo} onChange={this.handleDateToChange}></input>
-                    </div>
-                </div>
+                    <button id="add-experience" type="submit">Save</button>
+                </form>
             </div>
         )
     }
