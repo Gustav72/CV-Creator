@@ -11,12 +11,13 @@ class App extends Component {
     return (
       <div id='container'>
         <h1>React CV Creator</h1>
-          <GeneralInfo />
-          <button id="add-general-info">Save</button>
-          <Experience />
-          <Education />
-          <button id="add-education">Save</button>
-          <button type='submit' id="button">Print to PDF</button>
+          <div id="components">
+            <GeneralInfo />
+            <button id="add-general-info">Save</button>
+            <Experience />
+            <Education />
+            <button id="button">Print to PDF</button>
+          </div>
       </div>
     );
   }
