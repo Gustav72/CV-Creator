@@ -8,12 +8,12 @@ const AddedExperience = (props) => {
         <ul>
             {allExperience.map((experience) => {
                 return (
-                    <div>
-                        <li key={experience.company.id}>{experience.company.text}</li>
-                        <li key={experience.position.id}>{experience.position.text}</li>
-                        <li key={experience.dateFrom.id}>{experience.dateFrom.text}</li>
-                        <li key={experience.dateTo.id}>{experience.dateTo.text}</li>
-                        <li key={experience.tasks.id}>{experience.tasks.text}</li>
+                    <div key={experience.id}>
+                        <li key={experience.id + '_company'}>{experience.company.text}</li>
+                        <li key={experience.id + '_position'}>{experience.position.text}</li>
+                        <li key={experience.id + '_dateFrom'}>{experience.dateFrom.text}</li>
+                        <li key={experience.id + '_dateTo'}>{experience.dateTo.text}</li>
+                        <li key={experience.id + '_tasks'}>{experience.tasks.text}</li>
                     </div>
                 )
             })}

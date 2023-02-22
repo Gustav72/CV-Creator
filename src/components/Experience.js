@@ -1,120 +1,113 @@
-import React, {Component} from 'react';
-import uniqid from 'uniqid'
-import AddedExperience from './AddedExperience'
+import React, { Component } from 'react';
+import uniqid from 'uniqid';
+import AddedExperience from './AddedExperience';
 
 export default class Experience extends Component {
+  constructor(props) {
+    super(props);
 
-    constructor() {
-        super();
+    this.state = {
+      experience: {
+        id: uniqid(),
+        company: {
+          text: '',
+        },
+        position: {
+          text: '',
+        },
+        dateFrom: {
+          text: '',
+        },
+        dateTo: {
+          text: '',
+        },
+        tasks: {
+          text: '',
+        },
+      },
+      allExperience: [],
+    };
+  }
 
-        this.state = {
-            experience: {
-                company: {
-                    text: '',
-                    id: ''
-                },
-                position: {
-                    text: '',
-                    id: ''
-                },
-                dateFrom: {
-                    text: '',
-                    id: ''
-                },
-                dateTo: {
-                    text: '',
-                    id: ''
-                },
-                tasks: {
-                    text: '',
-                    id: ''
-                },
-            },
-            allExperience: [],
-        };
-    }
+  handleCompanyChange = (event) => {
+    this.setState((prevState) => ({
+      experience: {
+        ...prevState.experience,
+        company: {
+          text: event.target.value,
+        },
+      },
+    }));
+  };
 
-    handleCompanyChange = event => {
-        this.setState({
-            experience: {
-                company: {
-                    text: event.target.value,
-                    id: uniqid()
-                },
-            }
-        })
-    }
+  handlePositionChange = (event) => {
+    this.setState((prevState) => ({
+      experience: {
+        ...prevState.experience,
+        position: {
+          text: event.target.value,
+        },
+      },
+    }));
+  };
 
-    handlePositionChange = event => {
-        this.setState({
-            experience: {
-                position: {
-                    text: event.target.value,
-                    id: uniqid()
-                },
-            }
-        })
-    }
+  handleDateFromChange = (event) => {
+    this.setState((prevState) => ({
+      experience: {
+        ...prevState.experience,
+        dateFrom: {
+          text: event.target.value,
+        },
+      },
+    }));
+  };
 
-    handleDateFromChange = event => {
-        this.setState({
-            experience: {
-                dateFrom: {
-                    text: event.target.value,
-                    id: uniqid()
-                },
-            }
-        })
-    }
-    handleDateToChange = event => {
-        this.setState({
-            experience: {
-                dateTo: {
-                    text: event.target.value,
-                    id: uniqid()
-                },
-            }
-        })
-    }
-    handleTasksChange = event => {
-        this.setState({
-            experience: {
-                tasks: {
-                    text: event.target.value,
-                    id: uniqid()
-                },
-            }
-        })
-    }
+  handleDateToChange = (event) => {
+    this.setState((prevState) => ({
+      experience: {
+        ...prevState.experience,
+        dateTo: {
+          text: event.target.value,
+        },
+      },
+    }));
+  };
 
-    onSubmitExperience = event => {
-        event.preventDefault();
-        this.setState({
-            allExperience: this.state.allExperience.concat(this.state.experience),
-            experience: {
-                company: {
-                    text: '',
-                    id: ''
-                },
-                position: {
-                    text: '',
-                    id: ''
-                },
-                dateFrom: {
-                    text: '',
-                    id: ''
-                },
-                dateTo: {
-                    text: '',
-                    id: ''
-                },
-                tasks: {
-                    text: '',
-                    id: ''
-                },
-            },
-        })
-    }
+  handleTasksChange = (event) => {
+    this.setState((prevState) => ({
+      experience: {
+        ...prevState.experience,
+        tasks: {
+          text: event.target.value,
+        },
+      },
+    }));
+  };
+
+  onSubmitExperience = (event) => {
+    event.preventDefault();
+    this.setState((prevState) => ({
+      allExperience: [...prevState.allExperience, prevState.experience],
+      experience: {
+        id: '',
+        company: {
+          text: '',
+        },
+        position: {
+          text: '',
+        },
+        dateFrom: {
+          text: '',
+        },
+        dateTo: {
+          text: '',
+        },
+        tasks: {
+          text: '',
+        },
+      },
+    }));
+  };
 
     render() {
         return (
@@ -125,27 +118,27 @@ export default class Experience extends Component {
                     <div>
                         <div>
                             <label>Company:</label>
-                            <input type="text" value={this.state.company.text} onChange={this.handleCompanyChange}></input>
+                            <input type="text" value={this.state.experience.company.text} onChange={this.handleCompanyChange}></input>
                         </div>
                         <div>
                             <label>Position:</label>
-                            <input type="text" value={this.state.position.text} onChange={this.handlePositionChange}></input>
+                            <input type="text" value={this.state.experience.position.text} onChange={this.handlePositionChange}></input>
                         </div>
                     </div>
                     <div>
                         <div>
                             <label>From:</label>
-                            <input className="date" type="date" value={this.state.dateFrom.text} onChange={this.handleDateFromChange}></input>
+                            <input className="date" type="date" value={this.state.experience.dateFrom.text} onChange={this.handleDateFromChange}></input>
                         </div>
                         <div>
                             <label>To:</label>
-                            <input className="date" type="date" value={this.state.dateTo.text} onChange={this.handleDateToChange}></input>
+                            <input className="date" type="date" value={this.state.experience.dateTo.text} onChange={this.handleDateToChange}></input>
                         </div>
                     </div>
                     <div>
                         <div>
                             <label>Tasks:</label>
-                            <textarea type="text" value={this.state.tasks.text} onChange={this.handleTasksChange}></textarea>
+                            <textarea type="text" value={this.state.experience.tasks.text} onChange={this.handleTasksChange}></textarea>
                         </div>
                     </div>
                     <button id="add-experience" type="submit">Save</button>

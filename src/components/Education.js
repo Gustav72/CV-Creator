@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import uniqid from 'uniqid'
+import AddedEducation from './AddedEducation';
 
 export default class Education extends Component {
 
@@ -6,60 +8,93 @@ export default class Education extends Component {
         super(props);
 
         this.state = {
-            institution: '',
-            fieldOfFocus: '',
-            dateFrom: '',
-            dateTo: '',
+            education: {
+                id: uniqid(),
+                institution: '',
+                fieldOfFocus: '',
+                dateFrom: '',
+                dateTo: '',
+            },
+            allEducation: []
         }
     }
 
-    handleInstitutionChange = (event) => {
-        this.setState({
-            institution: event.target.value
-        })
+    handleInstitutionChange = event => {
+        this.setState((prevState) => ({
+            education: {
+              ...prevState.education,
+              institution: event.target.value
+            },
+          }));
     }
-    handleFieldOfFocusChange = (event) => {
-        this.setState({
-            fieldOfFocus: event.target.value
-        })
+    handleFieldOfFocusChange = event => {
+        this.setState((prevState) => ({
+            education: {
+              ...prevState.education,
+              fieldOfFocus: event.target.value
+            },
+          }));
     }
-    handleDateFromChange = event => {
-        this.setState({
+    handleDateFromChange = (event) => {
+        this.setState((prevState) => ({
+          education: {
+            ...prevState.education,
             dateFrom: event.target.value
-        })
-    }
-    handleDateToChange = event => {
-        this.setState({
+          },
+        }));
+      };
+    
+      handleDateToChange = (event) => {
+        this.setState((prevState) => ({
+          education: {
+            ...prevState.education,
             dateTo: event.target.value
-        })
-    }
+          },
+        }));
+      };
+
+    onSubmitEducation = event => {
+        event.preventDefault();
+        this.setState((prevState) => ({
+          allEducation: [...prevState.allEducation, prevState.education],
+            education: {
+                id: uniqid(),
+                institution: '',
+                fieldOfFocus: '',
+                dateFrom: '',
+                dateTo: '',
+            }
+        }));
+      };
+
 
     render() {
         return (
             <div className="education">
                 <h3>Education</h3>
-                <form>
+                <AddedEducation allEducation={this.state.allEducation}/>
+                <form onSubmit={this.onSubmitEducation}>
                     <div>
                         <div>
                             <label>Institution:</label>
-                            <input type="text" value={this.state.institution} onChange={this.handleInstitutionChange}></input>
+                            <input type="text" value={this.state.education.institution} onChange={this.handleInstitutionChange}></input>
                         </div>
                         <div>
                             <label>Field of Focus:</label>
-                            <input type="text" value={this.state.fieldOfFocus} onChange={this.handleFieldOfFocusChange}></input>
+                            <input type="text" value={this.state.education.fieldOfFocus} onChange={this.handleFieldOfFocusChange}></input>
                         </div>
                     </div>
                     <div>
                         <div>
                             <label>From:</label>
-                            <input className="date" type="date" value={this.state.dateFrom} onChange={this.handleDateFromChange}></input>
+                            <input className="date" type="date" value={this.state.education.dateFrom} onChange={this.handleDateFromChange}></input>
                         </div>
                         <div>
                             <label>To:</label>
-                            <input className="date" type="date" value={this.state.dateTo} onChange={this.handleDateToChange}></input>
+                            <input className="date" type="date" value={this.state.education.dateTo} onChange={this.handleDateToChange}></input>
                         </div>
                     </div>
-                    <button id="add-experience" type="submit">Save</button>
+                    <button id="add-education" type="submit">Save</button>
                 </form>
             </div>
         )
