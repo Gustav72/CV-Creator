@@ -67,12 +67,20 @@ export default class Education extends Component {
         }));
       };
 
+      deleteEducation = (index) => {
+        this.setState((prevState) => ({
+          allEducation: prevState.allEducation.filter((education, i) => i !== index),
+        }));
+      };
+
 
     render() {
         return (
             <div className="education">
                 <h3>Education</h3>
-                <AddedEducation allEducation={this.state.allEducation}/>
+                <div id="added-education">
+                  <AddedEducation allEducation={this.state.allEducation} deleteEducation={this.deleteEducation}/>
+                </div>
                 <form onSubmit={this.onSubmitEducation}>
                     <div>
                         <div>
