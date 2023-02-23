@@ -3,7 +3,8 @@ import uniqid from 'uniqid';
 import AddedExperience from './AddedExperience';
 
 export default class Experience extends Component {
-  constructor(props) {
+
+    constructor(props) {
     super(props);
 
     this.state = {
@@ -84,6 +85,8 @@ export default class Experience extends Component {
     }));
   };
 
+
+
   onSubmitExperience = (event) => {
     event.preventDefault();
     this.setState((prevState) => ({
@@ -109,11 +112,19 @@ export default class Experience extends Component {
     }));
   };
 
+  deleteExperience = (index) => {
+    this.setState((prevState) => ({
+      allExperience: prevState.allExperience.filter((experience, i) => i !== index),
+    }));
+  };
+
     render() {
         return (
-            <div className="experience">
+            <div className="experience" id="">
                 <h3>Experience</h3>
-                <AddedExperience allExperience={this.state.allExperience}/>
+                <div id="added-experience">
+                    <AddedExperience allExperience={this.state.allExperience} deleteExperience={this.deleteExperience}/>
+                </div>
                 <form onSubmit={this.onSubmitExperience}>
                     <div>
                         <div>

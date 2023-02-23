@@ -12,7 +12,7 @@ h1 {
 h3 {
     text-decoration: underline;
     width: 500px;
-    margin: 15px 0;
+    margin: 15px 15px 0px 0px;
 }
 
 #container {
@@ -30,7 +30,6 @@ h3 {
     padding-right: 20px;
     padding-bottom: 20px;
     background-color: rgb(233, 233, 233);
-    
 }
 
 #components > div > div {
@@ -43,7 +42,14 @@ h3 {
     flex-direction: row;
 }
 
-#components > div > div > div {
+#components > div > form > div > div{
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+}
+
+
+#components > div > div > div{
     display: flex;
     flex-direction: column;
     margin-right: 40px;
@@ -61,7 +67,6 @@ input {
 
 }
 
-
 .date {
     width: 203px;
 }
@@ -77,10 +82,30 @@ button {
     padding-right: auto;
     width: 100px;
     height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+
 
 }
 
 #button {
-    margin-top: 15px;
+    margin-top: 10px;
     background-color: orange;
+}
+
+#added-experience {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.added-experience-component {
+    margin: 0px;
+}
+
+.tasks {
+    inline-size: 500px;
+    overflow-wrap: break-word; 
+
 }

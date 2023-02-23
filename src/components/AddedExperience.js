@@ -2,22 +2,38 @@ import React from 'react';
 
 const AddedExperience = (props) => {
 
-    const { allExperience } = props;
+    const { allExperience, deleteExperience } = props;
+
+    const handleDelete = (index) => {
+        deleteExperience(index);
+    }
 
     return (
-        <ul>
-            {allExperience.map((experience) => {
+        <div className='added-experience-component'>
+            {allExperience.map((experience, index) => {
                 return (
-                    <div key={experience.id}>
-                        <li key={experience.id + '_company'}>{experience.company.text}</li>
-                        <li key={experience.id + '_position'}>{experience.position.text}</li>
-                        <li key={experience.id + '_dateFrom'}>{experience.dateFrom.text}</li>
-                        <li key={experience.id + '_dateTo'}>{experience.dateTo.text}</li>
-                        <li key={experience.id + '_tasks'}>{experience.tasks.text}</li>
+                    <div key={experience.id + index}>
+                        <div>
+                            <div key={experience.id + '_company' + index}>
+                                {experience.company.text}
+                            </div>
+                            <div key={experience.id + '_position' + index}>
+                                {experience.position.text}
+                            </div>
+                        </div>
+                            <div key={experience.id + '_dateFrom'+ index}>
+                                {experience.dateFrom.text + ' to ' + experience.dateTo.text}
+                            </div>
+                        <div>
+                            <div className="tasks" key={experience.id + '_tasks' + index}>
+                            {experience.tasks.text}
+                            </div>
+                        </div>
+                        <button onClick={() => handleDelete(index)}>Delete</button>
                     </div>
                 )
             })}
-        </ul>
+        </div>
     )
 }
 
