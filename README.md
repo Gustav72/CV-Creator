@@ -16,6 +16,6 @@ Project from [The Odin Project](https://www.theodinproject.com/)
 
 This application allows users to create a CV and then print it out! This project was created using React. Every section has its own component. Future improvements include an improved UI, ability to add custom sections, and the ability to remove any section not wanted.
 
-![Screenshot of User Interface](./screenshot.png)
+![Screenshot of User Interface](./src/screenshot.png)
 
 Thank You for taking the time to look at my work!
