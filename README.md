@@ -2,7 +2,7 @@
 
 Project from [The Odin Project](https://www.theodinproject.com/)
 
-## [Live Demo](https://gustav72.github.io/cv-creator/)
+## [Live Demo](https://gustav72.github.io/CV-Creator/)
 
 ### Technologies Used
 
