@@ -52,10 +52,10 @@ class GeneralInfo extends Component {
 
     render() {
         return (
-            <div className="general-info">
+            <div>
                 <h3>General Info</h3>
-                { this.state.isEditing ? (
-                    <div>
+                { this.state.isEditing ? (  
+                    <form id="general-info-edit" className="no-print">
                         <div>
                             <div>
                                 <label>First Name:</label>
@@ -76,19 +76,16 @@ class GeneralInfo extends Component {
                                 <input type="number" value={this.state.phoneNumber} onChange={this.handlePhoneNumberChange}></input>
                             </div>
                         </div>
-                        <button id="add-education" onClick={this.handleSaveClick}>Save</button>
-                    </div>
+                        <div>
+                            <button id="add-education" className="no-print" onClick={this.handleSaveClick}>Save</button>
+                        </div>
+                    </form>
                 ) : (
-                <div>
-                    <div>
-                        <p>{this.state.firstName}</p>
-                        <p>{this.state.lastName}</p>
-                    </div>
-                    <div>
-                        <p>{this.state.email}</p>
-                        <p>{this.state.phoneNumber}</p>
-                    </div>
-                    <button id="add-education" onClick={this.handleEditClick}>Edit</button>
+                <div id="general-info-save">
+                      <div>{this.state.firstName + ' ' + this.state.lastName} </div>
+                      <div>{this.state.email}</div>
+                      <div>{this.state.phoneNumber}</div>
+                      <button id="add-education"  className="no-print" onClick={this.handleEditClick}>Edit</button>
                 </div>
                     )}
             </div>

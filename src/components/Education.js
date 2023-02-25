@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import uniqid from 'uniqid'
-import AddedEducation from './AddedEducation';
+import AddedEducation from './AddedEducation'; 
 
 export default class Education extends Component {
 
@@ -81,7 +81,7 @@ export default class Education extends Component {
                 <div id="added-education">
                   <AddedEducation allEducation={this.state.allEducation} deleteEducation={this.deleteEducation}/>
                 </div>
-                <form onSubmit={this.onSubmitEducation}>
+                <form onSubmit={this.onSubmitEducation} className="no-print">
                     <div>
                         <div>
                             <label>Institution:</label>
@@ -102,7 +102,7 @@ export default class Education extends Component {
                             <input className="date" type="date" value={this.state.education.dateTo} onChange={this.handleDateToChange}></input>
                         </div>
                     </div>
-                    <button id="add-education" type="submit">Save</button>
+                    <button id="add-education" className="no-print" type="submit">Save</button>
                 </form>
             </div>
         )

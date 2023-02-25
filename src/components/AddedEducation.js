@@ -1,4 +1,5 @@
-import React from 'react'; 
+import React from 'react';
+
 
 const AddedEducation = (props) => {
 
@@ -24,7 +25,7 @@ const AddedEducation = (props) => {
                             <div key={education.id + '_dateFrom'+ index}>
                                 {education.dateFrom + ' to ' + education.dateTo}
                             </div>
-                        <button onClick={() => handleDelete(index)}>Delete</button>
+                    <button className="no-print" onClick={() => handleDelete(index)}>Delete</button>
                     </div>
                 )
             })}

@@ -125,7 +125,7 @@ export default class Experience extends Component {
                 <div id="added-experience">
                     <AddedExperience allExperience={this.state.allExperience} deleteExperience={this.deleteExperience}/>
                 </div>
-                <form onSubmit={this.onSubmitExperience}>
+                <form onSubmit={this.onSubmitExperience} className="no-print">
                     <div>
                         <div>
                             <label>Company:</label>
@@ -152,7 +152,7 @@ export default class Experience extends Component {
                             <textarea type="text" value={this.state.experience.tasks.text} onChange={this.handleTasksChange}></textarea>
                         </div>
                     </div>
-                    <button id="add-experience" type="submit">Save</button>
+                    <button className="no-print" id="add-experience" type="submit">Save</button>
                 </form>
             </div>
         )

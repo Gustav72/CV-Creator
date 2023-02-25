@@ -10,8 +10,10 @@ const AddedExperience = (props) => {
 
     return (
         <div className='added-experience-component'>
+            
             {allExperience.map((experience, index) => {
                 return (
+
                     <div key={experience.id + index}>
                         <div>
                             <div key={experience.id + '_company' + index}>
@@ -29,10 +31,11 @@ const AddedExperience = (props) => {
                             {experience.tasks.text}
                             </div>
                         </div>
-                        <button onClick={() => handleDelete(index)}>Delete</button>
+                        <button className="no-print" onClick={() => handleDelete(index)}>Delete</button>
                     </div>
                 )
             })}
+
         </div>
     )
 }

@@ -1,3 +1,9 @@
+@media print {
+    .no-print {
+        display: none;
+    }
+}
+
 body {
     background-color: rgb(4, 76, 98);
     display: flex;
@@ -13,6 +19,7 @@ h3 {
     text-decoration: underline;
     width: 500px;
     margin: 15px 15px 0px 0px;
+    padding-bottom: 5px;
 }
 
 #container {
@@ -30,11 +37,6 @@ h3 {
     padding-right: 20px;
     padding-bottom: 20px;
     background-color: rgb(233, 233, 233);
-}
-
-#components > div > div {
-    display: flex;
-    flex-direction: row;
 }
 
 #components > div > form > div {
@@ -64,7 +66,6 @@ input {
     width: 200px;
     margin-top: 5px;
     margin-bottom: 10px;
-
 }
 
 .date {
@@ -84,9 +85,6 @@ button {
     height: 30px;
     margin-top: 10px;
     margin-bottom: 10px;
-
-
-
 }
 
 #button {
@@ -113,5 +111,18 @@ button {
 .tasks {
     inline-size: 500px;
     overflow-wrap: break-word; 
+}
 
+#general-info-edit > div{
+    display: flex;
+    flex-direction: row;
+}
+
+#general-info-edit > div > div{
+    display: flex;
+    flex-direction: column;
+}
+
+#general-info-save {
+    display: block;
 }
