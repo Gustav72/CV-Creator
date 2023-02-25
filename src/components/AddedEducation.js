@@ -29,6 +29,7 @@ const AddedEducation = (props) => {
                 )
             })}
         </div>
+
     )
 }
 

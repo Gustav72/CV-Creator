@@ -13,7 +13,6 @@ class App extends Component {
         <h1>React CV Creator</h1>
           <div id="components">
             <GeneralInfo />
-            <button id="add-general-info">Save</button>
             <Experience />
             <Education />
             <button id="button">Print to PDF</button>

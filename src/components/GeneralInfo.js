@@ -10,8 +10,10 @@ class GeneralInfo extends Component {
             firstName: '',
             lastName: '',
             email: '',
-            phoneNumber: ''
-        }
+            phoneNumber: '',
+            buttonText: 'Save',
+        };
+        this.handleClick = this.handleClick.bind(this);
     }
 
     handleFirstNameChange = (event) => {
@@ -38,6 +40,14 @@ class GeneralInfo extends Component {
         })
     }
 
+    handleClick = () => {
+        this.setState((prevState) => ({
+            buttonText: prevState.buttonText === 'Save' ? 'Edit' : 'Save'
+        }));
+    }
+
+
+
     render() {
         return (
             <div className="general-info">
@@ -62,6 +72,7 @@ class GeneralInfo extends Component {
                         <input type="number" value={this.state.phoneNumber} onChange={this.handlePhoneNumberChange}></input>
                     </div>
                 </div>
+                <button id="add-education" type="submit" onClick={this.handleClick}>{this.state.buttonText}</button>
             </div>
         )
     }
